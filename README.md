@@ -28,22 +28,44 @@ Core principles:
 ---
 ## Screenshots
 
-### Interface Overview
+## Interface Overview
 
+This section documents the current UI state of the Relationship Architect system. Each screen represents a distinct interaction layer within the application.
+
+---
+
+### 1. Main Screen
 ![RAss1](assets/screenshots/RAss1.png)
 
+---
+
+### 2. Example of the Theme Element (this is the neon theme) 
 ![RAss2](assets/screenshots/RAss2.png)
 
+---
+
+### 3. File Creator/Editor Main UI
 ![RAss3](assets/screenshots/RAss3.png)
 
+---
+
+### 4. Inside a Created File
 ![RAss4](assets/screenshots/RAss4.png)
 
+---
+
+### 5. Constellation Mechanic (animated, super visual, intergral)
 ![RAss5](assets/screenshots/RAss5.png)
 
+---
+
+### 6. Constellation 'Select a Star' State
 ![RAss6](assets/screenshots/RAss6.png)
 
-![RAss7](assets/screenshots/RAss7.png)
+---
 
+### 7. Weekly Meeting Tab (one of many sections)
+![RAss7](assets/screenshots/RAss7.png)
 ## Repository Structure
 
 relationship-architect/
