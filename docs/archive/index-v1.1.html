@@ -52,7 +52,8 @@
   #add-file-item:hover { background: rgba(212,132,122,0.07); border-color: rgba(212,132,122,0.55); }
 
   /* ── Content ── */
-  /* ── Toolbar ── */
+  /* ── Toolbar sticky ── */
+  #toolbar { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; position: sticky; top: 0; z-index: 10; background: var(--bg); padding: 12px 0 10px; border-bottom: 1px solid var(--border); margin-top: -12px; }
   #content { flex: 1; overflow-y: auto; padding: 44px 52px; position: relative; scroll-behavior: smooth; }
   #content h1 { font-size: 22px; font-weight: 300; letter-spacing: 4px; color: var(--text); text-transform: uppercase; margin: 0 0 6px; }
   #content .motto { font-size: 12px; font-style: italic; color: var(--text-dim); margin-bottom: 28px; }
@@ -132,7 +133,7 @@
   .principles-locked .pl-text { font-size: 14px; color: var(--text-dim); font-style: italic; }
 
   /* ── Constellation ── */
-  .constellation-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 14px; background: rgba(255,255,255,0.01); position: relative; }
+  .constellation-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 14px; background: rgba(255,255,255,0.01); }
   .constellation-wrap .cw-header { padding: 10px 16px; border-bottom: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--gold); letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px; }
 
   /* ── System Architecture module cards ── */
@@ -306,23 +307,10 @@
     <div class="spacer"></div>
 
     <!-- Media Player -->
-    <div id="media-player" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:5px 10px;flex-shrink:0;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.7;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-      <div id="mp-track" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--text-dim);max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">—</div>
-      <div style="display:flex;align-items:center;gap:4px;">
-        <button onclick="scPrev()" style="background:none;border:none;cursor:pointer;color:rgba(201,164,81,0.5);padding:2px;display:flex;align-items:center;" title="Previous">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
-        </button>
-        <button id="mp-play-btn" onclick="scPlayPause()" style="background:rgba(201,164,81,0.12);border:1px solid rgba(201,164,81,0.28);border-radius:50%;width:22px;height:22px;cursor:pointer;color:var(--gold);display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;">
-          <svg id="mp-play-icon" width="9" height="9" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        </button>
-        <button onclick="scNext()" style="background:none;border:none;cursor:pointer;color:rgba(201,164,81,0.5);padding:2px;display:flex;align-items:center;" title="Next">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-        </button>
-      </div>
-      <div style="width:60px;height:2px;background:rgba(201,164,81,0.08);border-radius:1px;overflow:hidden;">
-        <div id="mp-progress" style="height:100%;background:linear-gradient(90deg,var(--gold),var(--rose));width:0%;transition:width 0.8s linear;"></div>
-      </div>
+    <div id="media-player" onclick="window.open('https://soundcloud.com/dan-tanner-189193050','_blank')" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:5px 12px;flex-shrink:0;cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='rgba(201,164,81,0.35)'" onmouseout="this.style.borderColor='var(--border)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" style="flex-shrink:0;opacity:0.8;"><path d="M1.175 12.225c-.046 0-.094.01-.134.026C.484 12.41 0 13.025 0 13.75c0 .725.484 1.34 1.041 1.499.04.016.088.026.134.026h.933v-3.05h-.933zm3.318-2.316c-.26 0-.52.026-.77.078V15.275h7.754V9.01A6.608 6.608 0 0 0 8.17 8.7a6.55 6.55 0 0 0-3.677 1.209zm9.574-1.417c-.26 0-.52.026-.77.078v6.705h1.54V8.57a6.6 6.6 0 0 0-.77-.078zm3.085.39v6.393h1.54V8.882a6.55 6.55 0 0 0-1.54 0zm3.086.52v5.873h1.54V9.402a6.55 6.55 0 0 0-1.54 0zm3.085.39v5.483H24V10.13a6.55 6.55 0 0 0-1.677-.338z"/></svg>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--text-dim);">Dan Tanner</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--gold);opacity:0.7;">▶ OPEN PLAYLIST</div>
     </div>
 
     <!-- Theme picker -->
@@ -418,25 +406,12 @@
     olive:    { '--bg':'#1C1E0C','--bg-panel':'#272B10','--gold':'#FF961F','--rose':'#870005','--text':'#FFF7E9','--text-dim':'rgba(255,247,233,0.42)','--border':'rgba(255,150,31,0.16)','--topbar-bg':'rgba(28,30,12,0.98)' }
   };
 
-  window.applyConstellationTheme = function(key) {
-    SFX.themeSwitch();
-    window._constellationThemeKey = key;
-    const cvs = document.getElementById('constellation-canvas');
-    if (cvs) initConstellationCanvas(cvs);
-    const csel = document.getElementById('constellation-theme-select');
-    if (csel) csel.value = key;
-    try { localStorage.setItem('dv_constellation_theme', key); } catch(e){}
-  };
-
   window.applyTheme = function(key) {
     SFX.themeSwitch();
     const t = THEMES[key]; if (!t) return;
     Object.entries(t).forEach(([p,v]) => document.documentElement.style.setProperty(p, v));
     const sel = document.getElementById('theme-select');
     if (sel) sel.value = key;
-    const tsel = document.getElementById('tab-theme-select');
-    if (tsel) tsel.value = key;
-
     try { localStorage.setItem('dv_theme', key); } catch(e){}
   };
 
@@ -560,31 +535,8 @@
      CONSTELLATION (System Architecture)
   ══════════════════════════════════════════ */
   function buildConstellation() {
-    return `<canvas id="constellation-canvas" style="width:100%;height:460px;display:block;border-radius:0 0 10px 10px;"></canvas>
-      <select id="constellation-theme-select" onchange="applyConstellationTheme(this.value)" style="position:absolute;bottom:12px;right:12px;background:rgba(6,11,20,0.82);backdrop-filter:blur(6px);border:1px solid rgba(201,164,81,0.25);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:0.8px;padding:5px 8px;border-radius:7px;cursor:pointer;outline:none;z-index:5;">
-        <option value="midnight">Midnight Gold</option>
-        <option value="warm">Warm Ember</option>
-        <option value="cool">Cool Slate</option>
-        <option value="mono">Monochrome</option>
-        <option value="dracula">Dracula</option>
-        <option value="neon">Neon</option>
-        <option value="pastel">Pastel</option>
-        <option value="vanilla">Vanilla Walnut</option>
-        <option value="olive">Olive Saffron</option>
-      </select>`;
+    return `<canvas id="constellation-canvas" style="width:100%;height:460px;display:block;border-radius:0 0 10px 10px;"></canvas>`;
   }
-
-  const ORB_PALETTES = {
-    midnight: ['#C9A451','#D4847A','#9E8AC0','#7AAAC8','#7AB87A','#C87A7A'],
-    warm:     ['#D4A46A','#C47860','#CC8860','#D49060','#C8A260','#B87260'],
-    cool:     ['#6EB0D4','#8AA4C8','#60C0E0','#5898C4','#80B4DC','#6898BC'],
-    mono:     ['#D0D0D0','#909090','#DCDCDC','#B0B0B0','#C4C4C4','#808080'],
-    dracula:  ['#bd93f9','#ff79c6','#ffb86c','#50fa7b','#8be9fd','#f1fa8c'],
-    neon:     ['#00ff9f','#ff2d78','#00d4ff','#ffcc00','#ff6e00','#c060ff'],
-    pastel:   ['#c8a8e8','#f0a0b8','#a8c8e8','#c8e8a8','#f0c8a8','#b8d8e0'],
-    vanilla:  ['#F9A620','#00DFCC','#F7C850','#50D4C8','#F5B038','#20C4BC'],
-    olive:    ['#FF961F','#870005','#D4A820','#6B0004','#E8B830','#AA0008'],
-  };
 
   function initConstellationCanvas(canvas) {
     if (canvas._cleanup) canvas._cleanup();
@@ -596,18 +548,13 @@
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
     ctx.scale(dpr, dpr);
 
-    function css(v) {
-      const ck = window._constellationThemeKey;
-      if (ck && THEMES[ck] && THEMES[ck][v]) return THEMES[ck][v];
-      return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || (v === '--gold' ? '#C9A451' : v === '--rose' ? '#D4847A' : '#E8DECE');
-    }
+    function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || (v === '--gold' ? '#C9A451' : v === '--rose' ? '#D4847A' : '#E8DECE'); }
 
     const NCX = W / 2, NCY = H / 2, R = Math.min(W, H) * 0.36;
-    const activePalette = (window._constellationThemeKey && ORB_PALETTES[window._constellationThemeKey]) || ORB_PALETTES.midnight;
 
     const nodes = SA_MODULES.map((m, i) => {
       const a = (i / SA_MODULES.length) * 2 * Math.PI - Math.PI / 2;
-      return { ...m, color: activePalette[i % activePalette.length], bx: NCX + R * Math.cos(a), by: NCY + R * Math.sin(a),
+      return { ...m, bx: NCX + R * Math.cos(a), by: NCY + R * Math.sin(a),
                x: NCX + R * Math.cos(a), y: NCY + R * Math.sin(a),
                vx: 0, vy: 0, a, gp: Math.random() * Math.PI * 2 };
     });
@@ -637,7 +584,7 @@
       let hit = nodes.find(n => Math.hypot(px-n.x, py-n.y) < 22);
       if (hit) {
         if (zoom.focusKey === hit.key) { window._constellationZoom(null); const p = document.getElementById('constellation-popup'); if(p) p.style.display='none'; }
-        else { window._constellationZoom(hit.key); SFX.orbClick(nodes.indexOf(hit)); window.highlightModule(hit.key, e); }
+        else { window._constellationZoom(hit.key); SFX.orbClick(); window.highlightModule(hit.key, e); }
       } else { window._constellationZoom(null); const p = document.getElementById('constellation-popup'); if(p) p.style.display='none'; }
     };
 
@@ -1483,26 +1430,12 @@
     // Toolbar
     const toolbar = document.createElement("div");
     toolbar.id = "toolbar";
-    const currentTheme = (() => { try { return localStorage.getItem('dv_theme') || 'midnight'; } catch(e) { return 'midnight'; } })();
     toolbar.innerHTML = `
       <button class="tb-btn save" id="btn-save">Save</button>
       <button class="tb-btn" id="btn-edit" style="${isEditing ? 'color:var(--gold);border-color:rgba(201,164,81,0.4)' : ''}">${isEditing ? "🔓 Lock" : "✏️ Edit"}</button>
       <button class="tb-btn" id="btn-export">Export</button>
       <button class="tb-btn" id="btn-close">Close</button>
-      <button class="tb-btn delete" id="btn-delete">Delete</button>
-      <span style="flex:1"></span>
-      <select id="tab-theme-select" onchange="applyTheme(this.value)" style="background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:9px;padding:5px 8px;border-radius:6px;cursor:pointer;outline:none;">
-        <option value="midnight">Midnight Gold</option>
-        <option value="warm">Warm Ember</option>
-        <option value="cool">Cool Slate</option>
-        <option value="mono">Monochrome</option>
-        <option value="dracula">Dracula</option>
-        <option value="neon">Neon</option>
-        <option value="pastel">Pastel</option>
-        <option value="vanilla">Vanilla Walnut</option>
-        <option value="olive">Olive Saffron</option>
-      </select>`;
-    toolbar.querySelector('#tab-theme-select').value = currentTheme;
+      <button class="tb-btn delete" id="btn-delete">Delete</button>`;
     content.appendChild(toolbar);
 
     // ── Special: Guiding Principles — seeded list ──
@@ -1534,11 +1467,8 @@
         ${buildConstellation()}`;
       content.appendChild(wrap);
       requestAnimationFrame(() => {
-        try { const ck = localStorage.getItem('dv_constellation_theme'); if (ck) window._constellationThemeKey = ck; } catch(e){}
         const cvs = document.getElementById('constellation-canvas');
         if (cvs) initConstellationCanvas(cvs);
-        const csel = document.getElementById('constellation-theme-select');
-        if (csel) { try { csel.value = window._constellationThemeKey || localStorage.getItem('dv_theme') || 'midnight'; } catch(e) {} }
       });
 
       // Module cards grid
@@ -2039,10 +1969,7 @@
     fileCreate() { playTone(523,0.35,0.09,'sine'); playTone(659,0.35,0.09,'sine',0.08); playTone(784,0.5,0.09,'sine',0.16); },
     deleteDo()   { playTone(220,0.35,0.10,'sine'); playTone(165,0.5,0.08,'sine',0.12); },
     complete()   { [523,659,784,1047].forEach((f,i) => playTone(f,0.55,0.10,'sine',i*0.11)); },
-    orbClick(idx) {
-      // C major scale across 2 octaves, one note per orb
-      const ORB_NOTES = [261.63,293.66,329.63,349.23,392.00,440.00,493.88,523.25,587.33,659.25,698.46,783.99];
-      const root = ORB_NOTES[((idx||0) % ORB_NOTES.length)];
+    orbClick() {
       const { ctx, master } = getAudio();
       // Whoosh: filtered noise sweep
       const bufLen = ctx.sampleRate * 0.6;
@@ -2061,13 +1988,13 @@
       noise.connect(filt); filt.connect(noiseGain); noiseGain.connect(master);
       if (master._rev) noiseGain.connect(master._rev);
       noise.start(); noise.stop(ctx.currentTime + 0.65);
-      // Rising harmonic series rooted at orb's note
-      playTone(root,      0.5,  0.18, 'sawtooth');
-      playTone(root*2,    0.45, 0.14, 'sine', 0.06);
-      playTone(root*4,    0.4,  0.10, 'sine', 0.14);
-      playTone(root*8,    0.35, 0.07, 'sine', 0.24);
-      // Shimmer: major triad above root
-      [root*3, root*3.75, root*4.5].forEach((f, i) => playTone(f, 0.4, 0.06, 'sine', 0.3 + i * 0.06));
+      // Rising sci-fi tone
+      playTone(220, 0.5, 0.18, 'sawtooth');
+      playTone(440, 0.45, 0.14, 'sine', 0.06);
+      playTone(880, 0.4, 0.10, 'sine', 0.14);
+      playTone(1760, 0.35, 0.07, 'sine', 0.24);
+      // Shimmer at peak
+      [1047, 1319, 1568].forEach((f, i) => playTone(f, 0.4, 0.06, 'sine', 0.3 + i * 0.06));
     },
     orbClose() {
       const { ctx, master } = getAudio();
@@ -2095,22 +2022,7 @@
     click()      { playTone(600,0.07,0.07,'sine'); },
     modalOpen()  { playTone(370,0.12,0.09,'sine'); playTone(494,0.22,0.08,'sine',0.07); },
     export()     { playTone(440,0.1,0.08,'triangle'); playTone(554,0.1,0.08,'triangle',0.08); playTone(659,0.3,0.07,'triangle',0.16); },
-    themeSwitch(){
-      const { ctx, master } = getAudio();
-      // Colour-sweep: short filtered noise burst
-      const buf = ctx.createBuffer(1, ctx.sampleRate * 0.25, ctx.sampleRate);
-      const d = buf.getChannelData(0);
-      for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1);
-      const noise = ctx.createBufferSource(); noise.buffer = buf;
-      const bpf = ctx.createBiquadFilter(); bpf.type = 'bandpass'; bpf.frequency.setValueAtTime(800, ctx.currentTime); bpf.frequency.linearRampToValueAtTime(3200, ctx.currentTime + 0.22); bpf.Q.value = 1.2;
-      const ng = ctx.createGain(); ng.gain.setValueAtTime(0.12, ctx.currentTime); ng.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.22);
-      noise.connect(bpf); bpf.connect(ng); ng.connect(master);
-      noise.start(); noise.stop(ctx.currentTime + 0.25);
-      // Rising 3-note arpeggio
-      [523, 659, 784].forEach((f, i) => playTone(f, 0.35 - i*0.05, 0.10 - i*0.02, 'sine', i * 0.07));
-      // Final shimmer
-      playTone(1047, 0.4, 0.06, 'sine', 0.24);
-    }
+    themeSwitch(){ playTone(740,0.06,0.08,'sine'); playTone(988,0.2,0.06,'sine',0.05); }
   };
   window.SFX = SFX;
 
@@ -2238,78 +2150,6 @@
   }
 
   init();
-</script>
-
-<!-- SoundCloud Ambient Player -->
-<iframe id="sc-iframe" allow="autoplay" style="position:absolute;width:1px;height:1px;left:-9999px;top:-9999px;opacity:0;" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dan-tanner-189193050/sets/anim8-my-playlist&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&buying=false&liking=false&download=false&sharing=false"></iframe>
-<script src="https://w.soundcloud.com/player/api.js"></script>
-
-
-
-<script>
-(function() {
-  var widget = null, isPlaying = false, hasStarted = false, mpVisible = true;
-
-  function setPlayIcon(playing) {
-    isPlaying = playing;
-    var el = document.getElementById('mp-play-icon');
-    el.innerHTML = playing
-      ? '<rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/>'
-      : '<polygon points="5 3 19 12 5 21 5 3"/>';
-  }
-
-  function onFirstInteraction() {
-    if (hasStarted || !widget) return;
-    hasStarted = true;
-    widget.play();
-    document.removeEventListener('click', onFirstInteraction, true);
-    document.removeEventListener('keydown', onFirstInteraction, true);
-    document.removeEventListener('touchstart', onFirstInteraction, true);
-  }
-
-  window.scPlayPause = function() {
-    if (!widget) return;
-    if (!hasStarted) { onFirstInteraction(); return; }
-    widget.isPaused(function(p) { p ? widget.play() : widget.pause(); });
-  };
-  window.scNext = function() { if (widget) widget.next(); };
-  window.scPrev = function() { if (widget) widget.prev(); };
-  window.toggleMP = function() {
-    mpVisible = !mpVisible;
-    var info = document.getElementById('mp-info');
-    if (info) info.style.display = mpVisible ? '' : 'none';
-  };
-
-  function tryInit() {
-    if (typeof SC === 'undefined') { setTimeout(tryInit, 300); return; }
-    widget = SC.Widget(document.getElementById('sc-iframe'));
-    widget.bind(SC.Widget.Events.READY, function() {
-      widget.getCurrentSound(function(s) {
-        if (s && s.title) document.getElementById('mp-track').textContent = s.title;
-      });
-      document.addEventListener('click', onFirstInteraction, true);
-      document.addEventListener('keydown', onFirstInteraction, true);
-      document.addEventListener('touchstart', onFirstInteraction, true);
-    });
-    widget.bind(SC.Widget.Events.PLAY, function() {
-      setPlayIcon(true);
-      widget.getCurrentSound(function(s) {
-        if (s && s.title) document.getElementById('mp-track').textContent = s.title;
-      });
-    });
-    widget.bind(SC.Widget.Events.PAUSE, function() { setPlayIcon(false); });
-    widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(e) {
-      var pct = e.relativePosition != null ? e.relativePosition * 100 : (e.currentPosition && e.duration ? (e.currentPosition / e.duration) * 100 : null);
-      if (pct != null) document.getElementById('mp-progress').style.width = pct + '%';
-    });
-    widget.bind(SC.Widget.Events.FINISH, function() {
-      setPlayIcon(false);
-      document.getElementById('mp-progress').style.width = '0%';
-    });
-  }
-
-  tryInit();
-})();
 </script>
 </body>
 </html>
