@@ -17,16 +17,6 @@ This project treats relational dynamics as a state-driven system rather than uns
 - **docs/specification/** → System behavior + functional design
 - **docs/reference/** → Source material (full code + original framework PDF)
 - **docs/archive/** → Legacy or deprecated materials
-
-## System Overview
-
-This repository is composed of four primary components:
-
-- `index.html` → Live interactive application
-- `/docs/framework-architecture.md` → System design and behavioral architecture
-- `/docs/full-code-reference.md` → Complete implementation reference and audit layer
-- `/docs/original-structure.pdf` → Foundational 21-page conceptual document
-
 ---
 
 ## Design Philosophy
