@@ -37,24 +37,19 @@
   #body { display: flex; flex: 1; overflow: hidden; min-height: 0; }
 
   /* ── Sidebar ── */
-  /* ── Sidebar & nav polish ── */
-  #sidebar { width: 248px; flex-shrink: 0; background: var(--bg-panel); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
-  .nav-section-group { font-family:'JetBrains Mono',monospace; font-size:7px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); opacity:0.3; padding:14px 12px 5px; }
-  .nav-divider { height:1px; background:var(--border); margin:4px 12px 4px; }
+  #sidebar { width: 232px; flex-shrink: 0; background: var(--bg-panel); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
   #sidebar .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5px; color: rgba(201,164,81,0.3); letter-spacing: 3px; text-transform: uppercase; margin: 14px 0 8px; padding-left: 12px; }
-  .nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 10px 8px 12px; border-radius: 6px; cursor: pointer; margin: 0 8px 1px; user-select: none; color: rgba(232,222,206,0.58); border-left: 2px solid transparent; font-family: 'JetBrains Mono', monospace; font-size: 11px; transition: background 0.15s, border-color 0.15s, color 0.15s; }
-  .nav-item:hover { background: rgba(201,164,81,0.09); border-left-color: rgba(201,164,81,0.3); color: rgba(232,222,206,0.85); }
-  .nav-item.active { background: rgba(201,164,81,0.13); border-left: 2px solid var(--gold); color: var(--gold); }
-  .nav-item .icon { width: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px 7px 12px; border-radius: 6px; cursor: pointer; margin: 0 8px 1px; user-select: none; color: rgba(232,222,206,0.58); border-left: 2px solid transparent; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; transition: background 0.15s; }
+  .nav-item:hover { background: rgba(201,164,81,0.07); }
+  .nav-item.active { background: rgba(201,164,81,0.12); border-left: 2px solid var(--gold); color: var(--gold); }
+  .nav-item .icon { width: 18px; text-align: center; font-size: 13px; }
   .nav-item .label { flex: 1; }
   .nav-item .check { font-size: 10px; color: var(--gold); }
   #add-file-item { color: rgba(212,132,122,0.72); border: 1.5px dashed rgba(212,132,122,0.3); margin: 8px; border-radius: 8px; padding: 9px 10px 9px 12px; }
   #add-file-item:hover { background: rgba(212,132,122,0.07); border-color: rgba(212,132,122,0.55); }
 
   /* ── Content ── */
-  /* ── Toolbar sticky ── */
-  #toolbar { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; position: sticky; top: 0; z-index: 10; background: var(--bg); padding: 12px 0 10px; border-bottom: 1px solid var(--border); margin-top: -12px; }
-  #content { flex: 1; overflow-y: auto; padding: 44px 52px; position: relative; scroll-behavior: smooth; }
+  #content { flex: 1; overflow-y: auto; padding: 44px 52px; position: relative; }
   #content h1 { font-size: 22px; font-weight: 300; letter-spacing: 4px; color: var(--text); text-transform: uppercase; margin: 0 0 6px; }
   #content .motto { font-size: 12px; font-style: italic; color: var(--text-dim); margin-bottom: 28px; }
 
@@ -67,32 +62,14 @@
 
   /* ── Home dashboard ── */
   #home-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(252px,1fr)); gap: 12px; }
-  /* ── Dashboard polish ── */
-  .home-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.2s; }
-  .home-card:hover { background: rgba(201,164,81,0.06); border-color: rgba(201,164,81,0.3); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
-  .home-card.complete { border-color: rgba(201,164,81,0.55); box-shadow: 0 0 18px rgba(201,164,81,0.14); }
+  .home-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.15s; }
+  .home-card:hover { background: rgba(201,164,81,0.05); border-color: rgba(201,164,81,0.28); }
   .home-card .hc-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
   .home-card .hc-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(201,164,81,0.08); border: 1px solid rgba(201,164,81,0.18); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
   .home-card .hc-label { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.2; }
   .home-card .hc-motto { font-size: 10.5px; color: var(--text-dim); font-style: italic; margin-top: 2px; }
   .home-card .hc-bar-track { height: 3px; background: rgba(201,164,81,0.08); border-radius: 2px; overflow: hidden; margin-top: 8px; }
-  /* ── Progress bar animation ── */
-  @keyframes barSlideIn { from { width: 0 } }
-  .hc-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--rose)); animation: barSlideIn 0.5s ease-out; }
-  /* ── Card lift ── */
-  @keyframes cardIn { from { opacity:0; transform:translateY(6px) } to { opacity:1; transform:translateY(0) } }
-  #home-grid .home-card { animation: cardIn 0.25s ease-out both; }
-  #home-grid .home-card:nth-child(1)  { animation-delay: 0.02s }
-  #home-grid .home-card:nth-child(2)  { animation-delay: 0.04s }
-  #home-grid .home-card:nth-child(3)  { animation-delay: 0.06s }
-  #home-grid .home-card:nth-child(4)  { animation-delay: 0.08s }
-  #home-grid .home-card:nth-child(5)  { animation-delay: 0.10s }
-  #home-grid .home-card:nth-child(6)  { animation-delay: 0.12s }
-  #home-grid .home-card:nth-child(7)  { animation-delay: 0.14s }
-  #home-grid .home-card:nth-child(8)  { animation-delay: 0.16s }
-  #home-grid .home-card:nth-child(9)  { animation-delay: 0.18s }
-  #home-grid .home-card:nth-child(10) { animation-delay: 0.20s }
-  #home-grid .home-card:nth-child(11) { animation-delay: 0.22s }
+  .home-card .hc-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--rose)); }
   .home-card .hc-meta { display: flex; justify-content: space-between; align-items: center; }
   .home-card .hc-count { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: rgba(201,164,81,0.45); }
   .home-card .hc-pct { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold); }
@@ -202,46 +179,7 @@
   .wg-meta-field input { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:6px; padding:7px 10px; color:var(--text); font-family:'JetBrains Mono',monospace; font-size:11px; outline:none; }
   .wg-meta-field input:focus { border-color:rgba(201,164,81,0.35); }
 
-  /* ── Meeting Notes ── */
-  .mn-entry { background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:12px; transition:border-color 0.15s; }
-  .mn-entry:hover { border-color:rgba(201,164,81,0.22); }
-  .mn-entry-header { display:grid; grid-template-columns:120px 80px 1fr auto; gap:0; align-items:stretch; border-bottom:1px solid var(--border); background:rgba(255,255,255,0.01); }
-  .mn-header-cell { padding:0; border-right:1px solid var(--border); }
-  .mn-header-cell:last-child { border-right:none; }
-  .mn-header-cell input { width:100%; background:transparent; border:none; outline:none; color:var(--text); font-family:'JetBrains Mono',monospace; font-size:10.5px; padding:9px 12px; box-sizing:border-box; }
-  .mn-header-cell input::placeholder { color:var(--text-dim); }
-  .mn-header-actions { display:flex; align-items:center; gap:6px; padding:0 12px; }
-  .mn-body { display:grid; grid-template-columns:1fr 1fr; gap:0; }
-  .mn-body-cell { padding:0; border-right:1px solid var(--border); }
-  .mn-body-cell:last-child { border-right:none; }
-  .mn-body-label { font-family:'JetBrains Mono',monospace; font-size:7.5px; color:var(--gold); letter-spacing:0.8px; text-transform:uppercase; padding:7px 12px 4px; border-bottom:1px solid rgba(201,164,81,0.07); }
-  .mn-body-cell textarea { width:100%; background:transparent; border:none; outline:none; color:var(--text); font-family:'Cormorant Garamond',serif; font-size:13.5px; line-height:1.75; padding:10px 12px; resize:none; min-height:100px; box-sizing:border-box; }
-  .mn-add-btn { display:flex; align-items:center; gap:10px; padding:14px 16px; border:1.5px dashed rgba(212,132,122,0.3); border-radius:10px; cursor:pointer; color:rgba(212,132,122,0.7); font-family:'JetBrains Mono',monospace; font-size:9px; margin-bottom:20px; transition:all 0.15s; }
-  .mn-add-btn:hover { background:rgba(212,132,122,0.05); border-color:rgba(212,132,122,0.55); }
-  .ga-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; margin-bottom:20px; }
-  .ga-stat { background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
-  .ga-stat-val { font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--gold); line-height:1; margin-bottom:4px; }
-  .ga-stat-label { font-family:'JetBrains Mono',monospace; font-size:8px; color:var(--text-dim); letter-spacing:1.5px; text-transform:uppercase; }
-  .ga-table { border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:20px; }
-  .ga-table-head { display:grid; grid-template-columns:2fr 1.5fr 80px 100px 110px 90px 36px; background:rgba(201,164,81,0.06); border-bottom:1px solid var(--border); }
-  .ga-hcell { padding:9px 10px; font-family:'JetBrains Mono',monospace; font-size:7.5px; color:var(--gold); letter-spacing:0.5px; text-transform:uppercase; }
-  .ga-row { display:grid; grid-template-columns:2fr 1.5fr 80px 100px 110px 90px 36px; align-items:center; border-bottom:1px solid rgba(201,164,81,0.05); transition:background 0.12s; }
-  .ga-row:hover { background:rgba(255,255,255,0.015); }
-  .ga-row:last-child { border-bottom:none; }
-  .ga-cell { padding:0; }
-  .ga-cell input,.ga-cell select { width:100%; background:transparent; border:none; outline:none; color:var(--text); font-family:'Cormorant Garamond',serif; font-size:13px; padding:8px 10px; box-sizing:border-box; }
-  .ga-cell select { cursor:pointer; font-size:12px; }
-  .ga-status-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:5px; flex-shrink:0; }
-  .ga-del { display:flex; align-items:center; justify-content:center; cursor:pointer; color:rgba(212,132,122,0.35); font-size:13px; }
-  .ga-del:hover { color:var(--rose); }
-  .ga-add-row { display:flex; align-items:center; gap:8px; padding:9px 12px; cursor:pointer; color:rgba(212,132,122,0.65); font-family:'JetBrains Mono',monospace; font-size:9px; border-top:1px solid var(--border); }
-  .ga-add-row:hover { background:rgba(212,132,122,0.05); }
-  .ga-filter-bar { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; align-items:center; }
-  .ga-filter-btn { font-family:'JetBrains Mono',monospace; font-size:8.5px; padding:5px 12px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--text-dim); cursor:pointer; transition:all 0.15s; }
-  .ga-filter-btn.active { border-color:var(--gold); color:var(--gold); background:rgba(201,164,81,0.08); }
-  .ga-progress-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
-  .ga-progress-bar { flex:1; height:6px; background:rgba(201,164,81,0.08); border-radius:3px; overflow:hidden; }
-  .ga-progress-fill { height:100%; background:linear-gradient(90deg,var(--gold),var(--rose)); border-radius:3px; transition:width 0.4s; }
+  /* ── Add File footer (every section) ── */
   .add-file-footer { margin-top: 36px; padding: 16px 20px; border: 1.5px dashed rgba(212,132,122,0.28); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.18s; }
   .add-file-footer:hover { background: rgba(212,132,122,0.04); border-color: rgba(212,132,122,0.5); }
   .add-file-footer .aff-left { display: flex; align-items: center; gap: 12px; }
@@ -335,14 +273,14 @@
   <div id="body">
     <!-- ── Sidebar ── -->
     <div id="sidebar">
-      <div class="nav-item" id="dashboard-item" onclick="goHome()" style="margin-top:12px;color:var(--gold);">
-        <span class="icon" style="display:flex;align-items:center;justify-content:center;width:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="label">Dashboard</span>
+      <div class="nav-item" id="dashboard-item" onclick="goHome()" style="margin-top:12px;">
+        <span class="icon">🏛</span><span class="label">Dashboard</span>
       </div>
       <div class="eyebrow">📁 Our Relationship</div>
       <div id="nav-list"></div>
       <div style="flex:1;min-height:12px;"></div>
       <div class="nav-item" id="add-file-item" onclick="openAddFile()">
-        <span class="icon" style="display:flex;align-items:center;justify-content:center;width:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span><span class="label">Add File</span>
+        <span class="icon" style="font-size:15px;">＋</span><span class="label">Add File</span>
       </div>
     </div>
 
@@ -407,29 +345,11 @@
   };
 
   window.applyTheme = function(key) {
-    SFX.themeSwitch();
     const t = THEMES[key]; if (!t) return;
     Object.entries(t).forEach(([p,v]) => document.documentElement.style.setProperty(p, v));
     const sel = document.getElementById('theme-select');
     if (sel) sel.value = key;
     try { localStorage.setItem('dv_theme', key); } catch(e){}
-  };
-
-  const ICONS = {
-    landmark:       `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>`,
-    diamond:        `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 12 12 22 2 12"/></svg>`,
-    heart:          `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
-    network:        `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="5" y2="17"/><line x1="12" y1="7" x2="19" y2="17"/><line x1="5" y1="19" x2="19" y2="19"/></svg>`,
-    calendar:       `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
-    target:         `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
-    trending_up:    `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
-    alert_triangle: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
-    scroll:         `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-    notebook:       `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-    book_open:      `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-    file_text:      `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-    home:           `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-    plus_circle:    `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`,
   };
 
   /* ══════════════════════════════════════════
@@ -454,7 +374,7 @@
      SECTIONS
   ══════════════════════════════════════════ */
   const SECTIONS = [
-    { id:"executive_summary",  icon:"landmark",       label:"Executive Summary", motto:"Why this architecture exists.",
+    { id:"executive_summary", icon:"🏛", label:"Executive Summary", motto:"Why this architecture exists.",
       fields:[
         {key:"purpose",label:"Our Purpose",placeholder:"Why does this architecture exist?"},
         {key:"mission",label:"Mission Statement",placeholder:"What we do, for each other, and why — one powerful sentence."},
@@ -462,9 +382,9 @@
         {key:"success",label:"Success Definition",placeholder:"What does a thriving, healthy relationship look like specifically for us?"},
         {key:"philosophy",label:"Relationship Philosophy",placeholder:"Our core belief about love, partnership, and what it means to truly commit."}
       ]},
-    { id:"guiding_principles", icon:"diamond",        label:"Guiding Principles", motto:"Our non-negotiable rules.",
+    { id:"guiding_principles", icon:"◆", label:"Guiding Principles", motto:"Our non-negotiable rules.",
       fields:[{key:"additional",label:"Additional Principles",placeholder:"Any other guiding principles we want to add..."}]},
-    { id:"core_values",        icon:"heart",          label:"Core Values", motto:"The foundation everything flows from.",
+    { id:"core_values", icon:"💎", label:"Core Values", motto:"The foundation everything flows from.",
       fields:[
         {key:"love_def",label:"Love & Respect — Definition",placeholder:""},
         {key:"love_behaviors",label:"Love & Respect — Behaviors",placeholder:""},
@@ -484,10 +404,10 @@
         {key:"growth_financial",label:"Growth — Financial",placeholder:""},
         {key:"growth_relationship",label:"Growth — Relationship",placeholder:""}
       ]},
-    { id:"system_architecture",icon:"network",         label:"System Architecture", motto:"Our relationship as a living system.",
+    { id:"system_architecture", icon:"🗂", label:"System Architecture", motto:"Our relationship as a living system.",
       fields: SA_MODULES.map(m => ({key:'sa_'+m.key, label:m.name+' — Notes & Commitments', placeholder:'Current status, intentions, and commitments for this module…'})) },
 
-    { id:"weekly_governance",  icon:"calendar",       label:"Weekly Governance Meeting", motto:"Sunday review, align, and decide.",
+    { id:"weekly_governance", icon:"📅", label:"Weekly Governance Meeting", motto:"Sunday review, align, and decide.",
       fields:[
         {key:"checkin_daniel",label:"Check-in — Daniel (Mood, Energy, Stress, Win, Struggle)",placeholder:""},
         {key:"checkin_veronica",label:"Check-in — Veronica (Mood, Energy, Stress, Win, Struggle)",placeholder:""},
@@ -499,9 +419,9 @@
         {key:"adr_log",label:"Decisions — ADR Log",placeholder:"ADR-002: ..."},
         {key:"new_goals",label:"New Goals (Daily/Weekly/Monthly/Yearly/Lifetime)",placeholder:""}
       ]},
-    { id:"goals_architecture", icon:"target",         label:"Goals Architecture", motto:"Our OKR-style goal system.",
+    { id:"goals_architecture", icon:"🎯", label:"Goals Architecture", motto:"Our OKR-style goal system.",
       fields:[{key:"active_goals",label:"Active Goals (Goal / Milestone / Tasks / Owner / Deadline / Status)",placeholder:""}]},
-    { id:"long_term_roadmap",  icon:"trending_up",    label:"Long-Term Roadmap", motto:"Our future, by horizon.",
+    { id:"long_term_roadmap", icon:"⛰", label:"Long-Term Roadmap", motto:"Our future, by horizon.",
       fields:[
         {key:"one_year",label:"1 Year — Near-Term Horizon",placeholder:"Key goals, where we want to be"},
         {key:"five_year",label:"5 Years — Mid-Term Vision",placeholder:"Key goals, major milestones"},
@@ -509,12 +429,12 @@
         {key:"retirement",label:"Retirement — Freedom Phase",placeholder:"Our retirement vision, financial target"},
         {key:"legacy",label:"Legacy — What We Leave Behind",placeholder:"How we want to be remembered"}
       ]},
-    { id:"risk_register",      icon:"alert_triangle", label:"Risk Register", motto:"Known risks, named honestly.", fields:[{key:"custom_risks",label:"Additional Risks",placeholder:"Add your own risks here..."}]},
-    { id:"decision_log",       icon:"scroll",         label:"Decision Log", motto:"Every major decision, documented.",
+    { id:"risk_register", icon:"⚠", label:"Risk Register", motto:"Known risks, named honestly.", fields:[{key:"custom_risks",label:"Additional Risks",placeholder:"Add your own risks here..."}]},
+    { id:"decision_log", icon:"📜", label:"Decision Log", motto:"Every major decision, documented.",
       fields:[{key:"decisions",label:"Decisions (Date / Decision / Reasoning / Outcome)",placeholder:"Buying a home, marriage, career moves..."}]},
-    { id:"meeting_notes",      icon:"notebook",       label:"Meeting Notes", motto:"Record of each weekly session.",
+    { id:"meeting_notes", icon:"🗒", label:"Meeting Notes", motto:"Record of each weekly session.",
       fields:[{key:"notes_log",label:"Meeting Entries (Date / Week # / Key Topics / Notes / Action Items)",placeholder:""}]},
-    { id:"appendix",           icon:"book_open",      label:"Appendix", motto:"Everything else that shapes us.",
+    { id:"appendix", icon:"📚", label:"Appendix", motto:"Everything else that shapes us.",
       fields:[
         {key:"books_resources",label:"Books & Resources",placeholder:"Books, podcasts, therapists, courses..."},
         {key:"dreams_daniel",label:"Daniel's Dreams",placeholder:""},
@@ -584,7 +504,7 @@
       let hit = nodes.find(n => Math.hypot(px-n.x, py-n.y) < 22);
       if (hit) {
         if (zoom.focusKey === hit.key) { window._constellationZoom(null); const p = document.getElementById('constellation-popup'); if(p) p.style.display='none'; }
-        else { window._constellationZoom(hit.key); SFX.orbClick(); window.highlightModule(hit.key, e); }
+        else { window._constellationZoom(hit.key); window.highlightModule(hit.key, e); }
       } else { window._constellationZoom(null); const p = document.getElementById('constellation-popup'); if(p) p.style.display='none'; }
     };
 
@@ -922,377 +842,6 @@
       hGrid.appendChild(card);
     });
     content.appendChild(hGrid);
-
-    // ── Toolbar wiring + footer ──
-    document.getElementById('btn-save').onclick   = () => { SFX.save(); saveSection(sec, fieldRefs); };
-    document.getElementById('btn-edit').onclick   = () => { isEditing ? SFX.editOff() : SFX.editOn(); editMode[sec.id] = !isEditing; renderContent(); };
-    document.getElementById('btn-export').onclick = () => { SFX.export(); exportSection(sec, fieldRefs); };
-    document.getElementById('btn-close').onclick  = () => { SFX.tabSwitch(); currentView = 'home'; renderNav(); renderContent(); };
-    document.getElementById('btn-delete').onclick = () => deleteSectionContent(sec, fieldRefs);
-
-    // Meeting Notes floating button in toolbar
-    const notesBtn = document.createElement('button');
-    notesBtn.className = 'tb-btn';
-    notesBtn.innerHTML = '📝 Meeting Notes';
-    notesBtn.style.cssText = 'color:var(--text-dim);';
-    notesBtn.onclick = () => { SFX.modalOpen(); openMeetingNotesPanel(); };
-    document.getElementById('toolbar').appendChild(notesBtn);
-
-    // Mark Complete button
-    const completeBtn = document.createElement('button');
-    const isComplete = sectionData[sec.id] && sectionData[sec.id].completed;
-    completeBtn.className = 'tb-btn';
-    completeBtn.style.cssText = isComplete
-      ? 'color:#7AB87A;border-color:rgba(122,184,122,0.4);background:rgba(122,184,122,0.08);'
-      : 'color:var(--text-dim);';
-    completeBtn.textContent = isComplete ? '✓ Complete' : 'Mark Complete';
-    completeBtn.onclick = () => {
-      // Collect current field values
-      const snapshot = {};
-      Object.keys(fieldRefs).forEach(k => { snapshot[k] = fieldRefs[k].value; });
-      // Archive to history
-      let history = [];
-      try { history = JSON.parse(localStorage.getItem('dv_wg_history') || '[]'); } catch(e) {}
-      const entry = { archivedAt: new Date().toISOString(), fields: snapshot };
-      history.unshift(entry);
-      try { localStorage.setItem('dv_wg_history', JSON.stringify(history)); } catch(e) {}
-      // Reset current fields
-      const emptyFields = {};
-      (sec.fields || []).forEach(f => emptyFields[f.key] = '');
-      const merged = { fields: emptyFields, completed: false, lastEditedAt: new Date().toISOString() };
-      try { localStorage.setItem('dv_sec_' + sec.id, JSON.stringify(merged)); } catch(e) {}
-      sectionData[sec.id] = merged;
-      SFX.complete();
-      showToast('✓ Meeting archived & fields reset');
-      renderNav();
-      renderContent();
-    };
-    document.getElementById('toolbar').appendChild(completeBtn);
-    content.appendChild(buildAddFileFooter(sec.id));
-
-    // ── Past Meetings archive ──
-    let wgHistory = [];
-    try { wgHistory = JSON.parse(localStorage.getItem('dv_wg_history') || '[]'); } catch(e) {}
-    if (wgHistory.length) {
-      const archiveLabel = div('Past Meetings', 'wg-eyebrow');
-      archiveLabel.style.marginTop = '40px';
-      content.appendChild(archiveLabel);
-      wgHistory.forEach((entry, idx) => {
-        const d = new Date(entry.archivedAt);
-        const dateStr = d.toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-        const weekNum = entry.fields['wg_week'] || '—';
-        const wrapper = div('', 'field-block');
-        wrapper.style.marginBottom = '10px';
-        const hdr = document.createElement('div');
-        hdr.className = 'field-label';
-        hdr.style.cssText = 'display:flex;justify-content:space-between;align-items:center;cursor:pointer;';
-        hdr.innerHTML = `<span>Week ${weekNum} &nbsp;·&nbsp; ${dateStr}</span><span style="font-size:11px;opacity:0.5;">▾</span>`;
-        const body = document.createElement('div');
-        body.style.cssText = 'padding:12px 14px;display:none;';
-        let txt = '';
-        Object.entries(entry.fields).forEach(([k, v]) => {
-          if (!v || v === '[]') return;
-          const label = k.replace(/^wg_/,'').replace(/_/g,' ');
-          txt += `<div style="margin-bottom:8px;"><div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--gold);letter-spacing:0.5px;margin-bottom:3px;">${label.toUpperCase()}</div><div style="font-size:13px;color:var(--text-dim);font-style:italic;line-height:1.6;">${v}</div></div>`;
-        });
-        txt += `<div style="display:flex;gap:8px;margin-top:12px;">
-          <button onclick="exportMeeting(${idx})" style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;">↓ Export</button>
-          <button onclick="deleteMeeting(${idx})" style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:6px 12px;border-radius:6px;border:1px solid rgba(212,132,122,0.3);background:transparent;color:var(--rose);cursor:pointer;">Delete</button>
-        </div>`;
-        body.innerHTML = txt;
-        hdr.onclick = () => {
-          const open = body.style.display !== 'none';
-          body.style.display = open ? 'none' : 'block';
-          hdr.querySelector('span:last-child').textContent = open ? '▾' : '▴';
-        };
-        wrapper.appendChild(hdr); wrapper.appendChild(body);
-        content.appendChild(wrapper);
-      });
-    }
-
-    window.exportMeeting = function(idx) {
-      let h = []; try { h = JSON.parse(localStorage.getItem('dv_wg_history') || '[]'); } catch(e) {}
-      const entry = h[idx]; if (!entry) return;
-      let txt = `Weekly Governance Meeting\nArchived: ${entry.archivedAt}\n\n`;
-      Object.entries(entry.fields).forEach(([k,v]) => { if (v && v !== '[]') txt += `${k}:\n${v}\n\n`; });
-      const blob = new Blob([txt], {type:'text/plain'});
-      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `meeting-${entry.archivedAt.slice(0,10)}.txt`; a.click();
-      SFX.export();
-    };
-    window.deleteMeeting = function(idx) {
-      openDeleteConfirm('this meeting record', () => {
-        let h = []; try { h = JSON.parse(localStorage.getItem('dv_wg_history') || '[]'); } catch(e) {}
-        h.splice(idx, 1);
-        try { localStorage.setItem('dv_wg_history', JSON.stringify(h)); } catch(e) {}
-        renderContent();
-      });
-    };
-  }
-
-  /* ══════════════════════════════════════════
-     MEETING NOTES RENDER
-  ══════════════════════════════════════════ */
-  function renderMeetingNotes(content, sec, data, isEditing, fieldRefs) {
-    const ro = !isEditing;
-    let notes = [];
-    try { notes = JSON.parse((data.fields && data.fields['mn_entries']) || '[]'); } catch(e) {}
-
-    const renderEntries = () => {
-      // Clear old entries (keep toolbar + add btn)
-      content.querySelectorAll('.mn-entry').forEach(el => el.remove());
-      const addBtn = content.querySelector('.mn-add-btn');
-
-      notes.forEach((note, i) => {
-        const entry = document.createElement('div');
-        entry.className = 'mn-entry';
-
-        // Header row: date | week# | topics | actions
-        const hdr = document.createElement('div');
-        hdr.className = 'mn-entry-header';
-
-        const dateCell = document.createElement('div'); dateCell.className = 'mn-header-cell';
-        const dateInp = document.createElement('input'); dateInp.type='date'; dateInp.value=note.date||''; dateInp.readOnly=ro;
-        dateInp.oninput = e => { notes[i].date = e.target.value; };
-        dateCell.appendChild(dateInp); hdr.appendChild(dateCell);
-
-        const weekCell = document.createElement('div'); weekCell.className = 'mn-header-cell';
-        const weekInp = document.createElement('input'); weekInp.type='text'; weekInp.placeholder='Week #'; weekInp.value=note.week||''; weekInp.readOnly=ro;
-        weekInp.oninput = e => { notes[i].week = e.target.value; };
-        weekCell.appendChild(weekInp); hdr.appendChild(weekCell);
-
-        const topicCell = document.createElement('div'); topicCell.className = 'mn-header-cell';
-        const topicInp = document.createElement('input'); topicInp.type='text'; topicInp.placeholder='Key topics covered…'; topicInp.value=note.topics||''; topicInp.readOnly=ro;
-        topicInp.oninput = e => { notes[i].topics = e.target.value; };
-        topicCell.appendChild(topicInp); hdr.appendChild(topicCell);
-
-        const actCell = document.createElement('div'); actCell.className = 'mn-header-cell mn-header-actions';
-        const exportBtn = document.createElement('button');
-        exportBtn.style.cssText = 'font-family:"JetBrains Mono",monospace;font-size:9px;padding:4px 9px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;';
-        exportBtn.textContent = '↓';
-        exportBtn.title = 'Export';
-        exportBtn.onclick = () => {
-          SFX.export();
-          const txt = `Meeting Notes\nDate: ${note.date||'—'} | Week: ${note.week||'—'}\nTopics: ${note.topics||'—'}\n\nNotes:\n${note.notes||''}\n\nAction Items:\n${note.actions||''}`;
-          const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt],{type:'text/plain'})); a.download = `meeting-${note.date||i}.txt`; a.click();
-        };
-        const delBtn = document.createElement('div');
-        delBtn.style.cssText = 'cursor:pointer;color:rgba(212,132,122,0.4);font-size:14px;padding:2px 4px;';
-        delBtn.textContent = '✕';
-        delBtn.onclick = () => {
-          if (ro) return;
-          openDeleteConfirm('this meeting entry', () => { notes.splice(i,1); saveNotes(); renderEntries(); });
-        };
-        actCell.appendChild(exportBtn); actCell.appendChild(delBtn); hdr.appendChild(actCell);
-        entry.appendChild(hdr);
-
-        // Body: notes | action items
-        const body = document.createElement('div'); body.className = 'mn-body';
-        [['notes','Notes & Observations'],['actions','Action Items']].forEach(([key,label]) => {
-          const cell = document.createElement('div'); cell.className = 'mn-body-cell';
-          const lbl = document.createElement('div'); lbl.className = 'mn-body-label'; lbl.textContent = label; cell.appendChild(lbl);
-          const ta = document.createElement('textarea');
-          ta.value = note[key] || ''; ta.placeholder = label + '…'; ta.readOnly = ro;
-          ta.oninput = e => { notes[i][key] = e.target.value; autoGrow(ta); };
-          ta.rows = 5;
-          cell.appendChild(ta); body.appendChild(cell);
-        });
-        entry.appendChild(body);
-
-        // Insert before add button
-        if (addBtn) content.insertBefore(entry, addBtn);
-        else content.appendChild(entry);
-      });
-    };
-
-    function autoGrow(ta) { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }
-    function saveNotes() {
-      fieldRefs['mn_entries'] = { get value() { return JSON.stringify(notes); } };
-    }
-    saveNotes();
-
-    // Add entry button
-    const addBtn = document.createElement('div');
-    addBtn.className = 'mn-add-btn';
-    addBtn.innerHTML = '<span style="font-size:16px;">+</span> New Meeting Entry';
-    addBtn.onclick = () => {
-      if (ro) return;
-      const today = new Date().toISOString().slice(0,10);
-      const weekNum = notes.length + 1;
-      notes.unshift({ date: today, week: String(weekNum), topics: '', notes: '', actions: '' });
-      saveNotes(); renderEntries();
-    };
-    content.appendChild(addBtn);
-    renderEntries();
-
-    // Toolbar
-    document.getElementById('btn-save').onclick   = () => { SFX.save(); saveSection(sec, fieldRefs); };
-    document.getElementById('btn-edit').onclick   = () => { isEditing ? SFX.editOff() : SFX.editOn(); editMode[sec.id] = !isEditing; renderContent(); };
-    document.getElementById('btn-export').onclick = () => {
-      SFX.export();
-      let txt = 'Meeting Notes\n' + '='.repeat(40) + '\n\n';
-      notes.forEach(n => { txt += `Date: ${n.date||'—'} | Week: ${n.week||'—'}\nTopics: ${n.topics||'—'}\n\nNotes:\n${n.notes||''}\n\nAction Items:\n${n.actions||''}\n\n---\n\n`; });
-      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt],{type:'text/plain'})); a.download='meeting-notes.txt'; a.click();
-    };
-    document.getElementById('btn-close').onclick  = () => { SFX.tabSwitch(); currentView = 'home'; renderNav(); renderContent(); };
-    document.getElementById('btn-delete').onclick = () => deleteSectionContent(sec, fieldRefs);
-    content.appendChild(buildAddFileFooter(sec.id));
-  }
-
-  /* ══════════════════════════════════════════
-     GOALS ARCHITECTURE RENDER
-  ══════════════════════════════════════════ */
-  const GA_STATUS_COLORS = { 'Not Started':'#888', 'In Progress':'#C9A451', 'Blocked':'#D4847A', 'Done':'#7AB87A' };
-  const GA_CATEGORIES = ['All','Personal','Financial','Health','Relationship','Career','Adventure'];
-  const GA_STATUSES = ['All Statuses','Not Started','In Progress','Blocked','Done'];
-
-  function renderGoalsArchitecture(content, sec, data, isEditing, fieldRefs) {
-    const ro = !isEditing;
-    const div = (html, cls) => { const d = document.createElement('div'); if (cls) d.className = cls; if (html) d.innerHTML = html; return d; };
-
-    let goals = [];
-    try { goals = JSON.parse((data.fields && data.fields['ga_goals']) || '[]'); } catch(e) {}
-    if (!goals.length) goals = [
-      {goal:'Build our emergency fund', milestone:'$10,000 saved', tasks:'Automate $500/mo transfer', owner:'Both', deadline:'2025-12', category:'Financial', status:'In Progress'},
-      {goal:'Weekly date night ritual', milestone:'12 dates in a row', tasks:'Schedule Sunday evenings', owner:'Both', deadline:'Ongoing', category:'Relationship', status:'In Progress'}
-    ];
-
-    let activeFilter = 'All';
-    let activeStatus = 'All Statuses';
-
-    // ── Stats bar ──
-    const statsGrid = div('', 'ga-grid');
-    const total = goals.length;
-    const done = goals.filter(g => g.status === 'Done').length;
-    const inProgress = goals.filter(g => g.status === 'In Progress').length;
-    const blocked = goals.filter(g => g.status === 'Blocked').length;
-    const pct = total ? Math.round(done/total*100) : 0;
-    [[total,'Total Goals'],[inProgress,'In Progress'],[done,'Completed'],[blocked,'Blocked']].forEach(([val,label]) => {
-      const s = div('','ga-stat');
-      s.innerHTML = `<div class="ga-stat-val">${val}</div><div class="ga-stat-label">${label}</div>`;
-      statsGrid.appendChild(s);
-    });
-    content.appendChild(statsGrid);
-
-    // Overall progress bar
-    const progRow = div('', 'ga-progress-row');
-    progRow.innerHTML = `<div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--gold);">${pct}% complete</div><div class="ga-progress-bar"><div class="ga-progress-fill" style="width:${pct}%"></div></div>`;
-    content.appendChild(progRow);
-
-    // ── Filter bar ──
-    const filterBar = div('', 'ga-filter-bar');
-    const tableWrap = div('', 'ga-table');
-
-    const renderTable = () => {
-      tableWrap.innerHTML = `<div class="ga-table-head">
-        <div class="ga-hcell">Goal</div>
-        <div class="ga-hcell">Milestone</div>
-        <div class="ga-hcell">Owner</div>
-        <div class="ga-hcell">Category</div>
-        <div class="ga-hcell">Deadline</div>
-        <div class="ga-hcell">Status</div>
-        <div class="ga-hcell"></div>
-      </div>`;
-    const filtered = (activeFilter === 'All' ? goals : goals.filter(g => g.category === activeFilter))
-        .filter(g => activeStatus === 'All Statuses' || g.status === activeStatus);
-      filtered.forEach((goal, fi) => {
-        const ri = goals.indexOf(goal);
-        const row = div('', 'ga-row');
-        ['goal','milestone','tasks'].slice(0,2).forEach(col => {
-          const cell = div('', 'ga-cell');
-          const inp = document.createElement('input'); inp.type='text'; inp.value=goal[col]||''; inp.placeholder=col+'…'; inp.readOnly=ro;
-          inp.oninput = e => { goals[ri][col] = e.target.value; };
-          cell.appendChild(inp); row.appendChild(cell);
-        });
-        // Owner
-        const ownerCell = div('','ga-cell'); const ownerSel = document.createElement('select'); ownerSel.disabled=false;
-        ['Both','Daniel','Veronica'].forEach(o => { const opt=document.createElement('option'); opt.value=o; opt.textContent=o; if(goal.owner===o) opt.selected=true; ownerSel.appendChild(opt); });
-        ownerSel.onchange = e => { goals[ri].owner = e.target.value; };
-        ownerCell.appendChild(ownerSel); row.appendChild(ownerCell);
-        // Category
-        const catCell = div('','ga-cell'); const catSel = document.createElement('select'); catSel.disabled=false;
-        GA_CATEGORIES.slice(1).forEach(c => { const opt=document.createElement('option'); opt.value=c; opt.textContent=c; if(goal.category===c) opt.selected=true; catSel.appendChild(opt); });
-        catSel.onchange = e => { goals[ri].category = e.target.value; renderTable(); };
-        catCell.appendChild(catSel); row.appendChild(catCell);
-        // Deadline
-        const dlCell = div('','ga-cell'); const dlInp = document.createElement('input'); dlInp.type='text'; dlInp.value=goal.deadline||''; dlInp.placeholder='YYYY-MM'; dlInp.readOnly=ro;
-        dlInp.oninput = e => { goals[ri].deadline = e.target.value; };
-        dlCell.appendChild(dlInp); row.appendChild(dlCell);
-        // Status cell — with color dot
-        const stCell = div('','ga-cell'); 
-        const stWrapper = document.createElement('div');
-        stWrapper.style.cssText = 'display:flex;align-items:center;padding:0 8px;gap:6px;';
-        const dot = document.createElement('div');
-        dot.className = 'ga-status-dot';
-        dot.style.background = GA_STATUS_COLORS[goal.status] || '#888';
-        const stSel = document.createElement('select'); stSel.disabled = false;
-        stSel.style.cssText = 'flex:1;background:transparent;border:none;outline:none;color:' + (GA_STATUS_COLORS[goal.status]||'var(--text)') + ';font-family:"JetBrains Mono",monospace;font-size:10px;padding:8px 0;cursor:pointer;';
-        Object.keys(GA_STATUS_COLORS).forEach(s => { const opt=document.createElement('option'); opt.value=s; opt.textContent=s; if(goal.status===s) opt.selected=true; stSel.appendChild(opt); });
-        stSel.onchange = e => { 
-          goals[ri].status = e.target.value; 
-          dot.style.background = GA_STATUS_COLORS[e.target.value] || '#888';
-          stSel.style.color = GA_STATUS_COLORS[e.target.value] || 'var(--text)';
-          // refresh stats
-          const total2 = goals.length, done2 = goals.filter(g=>g.status==='Done').length;
-          const pct2 = total2 ? Math.round(done2/total2*100) : 0;
-          const fill = content.querySelector('.ga-progress-fill');
-          if (fill) fill.style.width = pct2 + '%';
-        };
-        stWrapper.appendChild(dot); stWrapper.appendChild(stSel);
-        stCell.appendChild(stWrapper); row.appendChild(stCell);
-        // Delete
-        const del = div('✕','ga-del'); del.onclick = () => { if(ro) return; goals.splice(ri,1); renderTable(); };
-        row.appendChild(del);
-        tableWrap.appendChild(row);
-      });
-      const addRow = div('+ Add Goal', 'ga-add-row');
-      addRow.onclick = () => { if(ro) return; goals.push({goal:'',milestone:'',tasks:'',owner:'Both',deadline:'',category:'Personal',status:'Not Started'}); renderTable(); };
-      tableWrap.appendChild(addRow);
-    };
-
-    GA_CATEGORIES.forEach(cat => {
-      const btn = div(cat, 'ga-filter-btn');
-      if (cat === 'All') btn.classList.add('active');
-      btn.onclick = () => {
-        activeFilter = cat;
-        filterBar.querySelectorAll('.ga-filter-btn[data-type="cat"]').forEach(b => b.classList.toggle('active', b.textContent === cat));
-        renderTable();
-      };
-      btn.dataset.type = 'cat';
-      filterBar.appendChild(btn);
-    });
-    // Spacer
-    const sp = div('', ''); sp.style.cssText = 'width:1px;height:20px;background:var(--border);margin:0 4px;'; filterBar.appendChild(sp);
-    GA_STATUSES.forEach(st => {
-      const btn = div(st, 'ga-filter-btn');
-      if (st === 'All Statuses') btn.classList.add('active');
-      if (GA_STATUS_COLORS[st]) btn.style.setProperty('--dot', GA_STATUS_COLORS[st]);
-      btn.onclick = () => {
-        activeStatus = st;
-        filterBar.querySelectorAll('.ga-filter-btn[data-type="st"]').forEach(b => b.classList.toggle('active', b.textContent === st));
-        renderTable();
-      };
-      btn.dataset.type = 'st';
-      filterBar.appendChild(btn);
-    });
-    content.appendChild(filterBar);
-    renderTable();
-    content.appendChild(tableWrap);
-
-    // Wire fieldRefs for save
-    fieldRefs['ga_goals'] = { get value() { return JSON.stringify(goals); } };
-
-    // Toolbar
-    document.getElementById('btn-save').onclick   = () => { SFX.save(); saveSection(sec, fieldRefs); };
-    document.getElementById('btn-edit').onclick   = () => { isEditing ? SFX.editOff() : SFX.editOn(); editMode[sec.id] = !isEditing; renderContent(); };
-    document.getElementById('btn-export').onclick = () => {
-      SFX.export();
-      let txt = 'Goals Architecture\n' + '='.repeat(40) + '\n\n';
-      goals.forEach(g => { txt += `Goal: ${g.goal}\nMilestone: ${g.milestone}\nOwner: ${g.owner}\nCategory: ${g.category}\nDeadline: ${g.deadline}\nStatus: ${g.status}\n\n`; });
-      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt],{type:'text/plain'})); a.download = 'goals.txt'; a.click();
-    };
-    document.getElementById('btn-close').onclick  = () => { SFX.tabSwitch(); currentView = 'home'; renderNav(); renderContent(); };
-    document.getElementById('btn-delete').onclick = () => deleteSectionContent(sec, fieldRefs);
-    content.appendChild(buildAddFileFooter(sec.id));
   }
 
   /* ══════════════════════════════════════════
@@ -1321,42 +870,29 @@
     document.getElementById('dashboard-item').className = 'nav-item' + (currentView === 'home' ? ' active' : '');
     const navList = document.getElementById('nav-list');
     navList.innerHTML = '';
-    const groups = [
-      { label:'Core',       ids:['executive_summary','guiding_principles','core_values','system_architecture'] },
-      { label:'Operations', ids:['weekly_governance','goals_architecture','long_term_roadmap'] },
-      { label:'Records',    ids:['risk_register','decision_log'] },
-      { label:'Reference',  ids:['appendix'] }
-    ];
-    groups.forEach(group => {
-      const eyebrow = document.createElement('div');
-      eyebrow.className = 'nav-section-group';
-      eyebrow.textContent = group.label;
-      navList.appendChild(eyebrow);
-      group.ids.forEach(id => {
-        const sec = SECTIONS.find(s => s.id === id); if (!sec) return;
-        const item = document.createElement('div');
-        item.className = 'nav-item' + (sec.id === currentView ? ' active' : '');
-        item.onclick = () => { SFX.tabSwitch(); currentView = sec.id; renderNav(); renderContent(); };
-        const check = (sectionData[sec.id] && sectionData[sec.id].completed) ? '<span class="check">✓</span>' : '';
-        const iconHtml = ICONS[sec.icon] || sec.icon || '';
-        item.innerHTML = `<span class="icon" style="display:flex;align-items:center;justify-content:center;width:20px;">${iconHtml}</span><span class="label">${sec.label}</span>${check}`;
-        navList.appendChild(item);
-        customSections.filter(cs => cs.parentId === sec.id).forEach(cs => {
-          const child = document.createElement('div');
-          child.className = 'nav-item' + (cs.id === currentView ? ' active' : '');
-          child.style.cssText = 'padding-left:28px;font-size:10.5px;';
-          child.onclick = () => { SFX.tabSwitch(); openDocEditor(cs.id, cs.label, (sectionData[cs.id] && sectionData[cs.id].fields && sectionData[cs.id].fields.body) || ''); };
-          child.innerHTML = `<span class="icon" style="display:flex;align-items:center;justify-content:center;width:20px;">${ICONS.file_text}</span><span class="label">${cs.label}</span>`;
-          navList.appendChild(child);
-        });
+    SECTIONS.forEach(sec => {
+      const item = document.createElement('div');
+      item.className = 'nav-item' + (sec.id === currentView ? ' active' : '');
+      item.onclick = () => { currentView = sec.id; renderNav(); renderContent(); };
+      const check = (sectionData[sec.id] && sectionData[sec.id].completed) ? '<span class="check">✓</span>' : '';
+      item.innerHTML = `<span class="icon">${sec.icon}</span><span class="label">${sec.label}</span>${check}`;
+      navList.appendChild(item);
+      // Render custom child files indented under this section
+      customSections.filter(cs => cs.parentId === sec.id).forEach(cs => {
+        const child = document.createElement('div');
+        child.className = 'nav-item' + (cs.id === currentView ? ' active' : '');
+        child.style.cssText = 'padding-left:28px;font-size:10.5px;';
+        child.onclick = () => openDocEditor(cs.id, cs.label, (sectionData[cs.id] && sectionData[cs.id].fields && sectionData[cs.id].fields.body) || '');
+        child.innerHTML = `<span class="icon" style="font-size:11px;">📄</span><span class="label">${cs.label}</span>`;
+        navList.appendChild(child);
       });
-      const divider = document.createElement('div'); divider.className = 'nav-divider'; navList.appendChild(divider);
     });
+    // Orphan custom sections (no parent) at bottom
     customSections.filter(cs => !cs.parentId).forEach(cs => {
       const item = document.createElement('div');
       item.className = 'nav-item' + (cs.id === currentView ? ' active' : '');
-      item.onclick = () => { SFX.tabSwitch(); openDocEditor(cs.id, cs.label, (sectionData[cs.id] && sectionData[cs.id].fields && sectionData[cs.id].fields.body) || ''); };
-      item.innerHTML = `<span class="icon" style="display:flex;align-items:center;justify-content:center;width:20px;">${ICONS.file_text}</span><span class="label">${cs.label}</span>`;
+      item.onclick = () => openDocEditor(cs.id, cs.label, (sectionData[cs.id] && sectionData[cs.id].fields && sectionData[cs.id].fields.body) || '');
+      item.innerHTML = `<span class="icon">📄</span><span class="label">${cs.label}</span>`;
       navList.appendChild(item);
     });
   }
@@ -1375,11 +911,11 @@
       const pct = pctFor(sec.id);
       const filled = filledCountFor(sec.id);
       const card = document.createElement("div");
-      card.className = "home-card" + (pct >= 100 ? ' complete' : '');
-      card.onclick = () => { SFX.tabSwitch(); currentView = sec.id; renderNav(); renderContent(); };
+      card.className = "home-card";
+      card.onclick = () => { currentView = sec.id; renderNav(); renderContent(); };
       card.innerHTML = `
         <div class="hc-top">
-          <div class="hc-icon" style="color:var(--gold);">${ICONS[sec.icon] || ''}</div>
+          <div class="hc-icon">${sec.icon}</div>
           <div>
             <div class="hc-label">${sec.label}</div>
             <div class="hc-motto">${sec.motto}</div>
@@ -1399,7 +935,7 @@
       card.onclick = () => { currentView = sec.id; renderNav(); renderContent(); };
       card.innerHTML = `
         <div class="hc-top">
-          <div class="hc-icon" style="color:var(--gold);">${ICONS.file_text}</div>
+          <div class="hc-icon">📄</div>
           <div><div class="hc-label">${sec.label}</div><div class="hc-motto">Custom section</div></div>
         </div>
         <div class="hc-meta"><span class="hc-count">0/0 entries</span><span class="hc-pct">—</span></div>
@@ -1425,7 +961,7 @@
     const data = sectionData[sec.id] || { fields: {} };
     const isEditing = editMode[sec.id] === true;
 
-    content.innerHTML = `<h1 style="display:flex;align-items:center;gap:12px;"><span style="color:var(--gold);display:flex;align-items:center;">${ICONS[sec.icon]||''}</span> ${sec.label}</h1><div class="motto">${sec.motto || ''}</div>`;
+    content.innerHTML = `<h1>${sec.icon || ''} ${sec.label}</h1><div class="motto">${sec.motto || ''}</div>`;
 
     // Toolbar
     const toolbar = document.createElement("div");
@@ -1504,10 +1040,10 @@
 
       // Skip the default fields loop for this section
       content.appendChild(buildAddFileFooter(sec.id));
-      document.getElementById("btn-save").onclick = () => { SFX.save(); saveSection(sec, fieldRefs); };
-      document.getElementById("btn-edit").onclick = () => { isEditing ? SFX.editOff() : SFX.editOn(); editMode[sec.id] = !isEditing; renderContent(); };
-      document.getElementById("btn-export").onclick = () => { SFX.export(); exportSection(sec, fieldRefs); };
-      document.getElementById("btn-close").onclick = () => { SFX.tabSwitch(); currentView = "home"; renderNav(); renderContent(); };
+      document.getElementById("btn-save").onclick = () => saveSection(sec, fieldRefs);
+      document.getElementById("btn-edit").onclick = () => { editMode[sec.id] = !isEditing; renderContent(); };
+      document.getElementById("btn-export").onclick = () => exportSection(sec, fieldRefs);
+      document.getElementById("btn-close").onclick = () => { currentView = "home"; renderNav(); renderContent(); };
       document.getElementById("btn-delete").onclick = () => deleteSectionContent(sec, fieldRefs);
       return;
     }
@@ -1519,24 +1055,17 @@
       content.appendChild(wrap);
     }
 
-    // ── Special: Weekly Governance ──
-    const fieldRefs = {};
+    // ── Special: Weekly Governance — seeded ADR ──
     if (sec.id === "weekly_governance") {
-      renderWeeklyGovernance(content, sec, data, isEditing, fieldRefs);
-      return;
+      const adr = (sec.fields || []).find(f => f.key === "adr_log");
+      if (adr) {
+        // Inject seeded ADR above the ADR field — handled below
+        content.dataset.showAdr = "1";
+      }
     }
 
-    // ── Special: Goals Architecture ──
-    if (sec.id === "goals_architecture") {
-      renderGoalsArchitecture(content, sec, data, isEditing, fieldRefs);
-      return;
-    }
-
-    // ── Special: Meeting Notes ──
-    if (sec.id === "meeting_notes") {
-      renderMeetingNotes(content, sec, data, isEditing, fieldRefs);
-      return;
-    }
+    // Fields
+    const fieldRefs = {};
     (sec.fields || []).forEach(f => {
       // For weekly_governance, inject seeded ADR example before adr_log field
       if (sec.id === "weekly_governance" && f.key === "adr_log") {
@@ -1565,10 +1094,10 @@
       content.appendChild(ph);
     }
 
-    document.getElementById("btn-save").onclick = () => { SFX.save(); saveSection(sec, fieldRefs); };
-    document.getElementById("btn-edit").onclick = () => { isEditing ? SFX.editOff() : SFX.editOn(); editMode[sec.id] = !isEditing; renderContent(); };
-    document.getElementById("btn-export").onclick = () => { SFX.export(); exportSection(sec, fieldRefs); };
-    document.getElementById("btn-close").onclick = () => { SFX.tabSwitch(); currentView = "home"; renderNav(); renderContent(); };
+    document.getElementById("btn-save").onclick = () => saveSection(sec, fieldRefs);
+    document.getElementById("btn-edit").onclick = () => { editMode[sec.id] = !isEditing; renderContent(); };
+    document.getElementById("btn-export").onclick = () => exportSection(sec, fieldRefs);
+    document.getElementById("btn-close").onclick = () => { currentView = "home"; renderNav(); renderContent(); };
     document.getElementById("btn-delete").onclick = () => deleteSectionContent(sec, fieldRefs);
 
     // ── Add File footer ── every section tab
@@ -1718,7 +1247,7 @@
     sectionData[_docEditorId] = merged;
     showToast('✓ Saved');
     const overlay = document.getElementById('doc-editor-overlay');
-    if (overlay) { SFX.orbClose(); overlay.style.display = 'none'; }
+    if (overlay) overlay.style.display = 'none';
     _docEditorId = null;
   };
 
@@ -1727,7 +1256,6 @@
   ══════════════════════════════════════════ */
   let addFileParentId = null;
   window.openAddFile = function(parentId) {
-    SFX.modalOpen();
     addFileParentId = parentId || null;
     document.getElementById('add-file-modal').classList.add('open');
     document.getElementById('afm-name').focus();
@@ -1769,7 +1297,7 @@
     sectionData[id] = { fields: { body }, completed: false };
     try { localStorage.setItem('dv_custom_sections', JSON.stringify(customSections)); } catch(e){}
     try { localStorage.setItem('dv_sec_' + id, JSON.stringify(sectionData[id])); } catch(e){}
-    SFX.fileCreate(); closeAddFile();
+    closeAddFile();
     renderNav();
     openDocEditor(id, name, body);
   };
@@ -1927,180 +1455,7 @@
     if (popup) popup.style.display = 'none';
   };
 
-  /* ── Sound Engine ── */
-  let _audioCtx = null, _masterGain = null;
-
-  function getAudio() {
-    if (!_audioCtx) {
-      _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      _masterGain = _audioCtx.createGain();
-      _masterGain.gain.value = 0.55;
-      const revLen = _audioCtx.sampleRate * 1.2;
-      const revBuf = _audioCtx.createBuffer(2, revLen, _audioCtx.sampleRate);
-      for (let ch = 0; ch < 2; ch++) { const d = revBuf.getChannelData(ch); for (let i = 0; i < revLen; i++) d[i] = (Math.random()*2-1)*Math.pow(1-i/revLen,2.5); }
-      const rev = _audioCtx.createConvolver(); rev.buffer = revBuf;
-      const revG = _audioCtx.createGain(); revG.gain.value = 0.28;
-      rev.connect(revG); revG.connect(_masterGain);
-      _masterGain._rev = rev;
-      _masterGain.connect(_audioCtx.destination);
-    }
-    if (_audioCtx.state === 'suspended') _audioCtx.resume();
-    return { ctx: _audioCtx, master: _masterGain };
-  }
-
-  function playTone(freq, dur, vol, type, delay) {
-    const { ctx, master } = getAudio();
-    const t = ctx.currentTime + (delay || 0);
-    const osc = ctx.createOscillator(), env = ctx.createGain();
-    osc.type = type || 'sine'; osc.frequency.value = freq;
-    env.gain.setValueAtTime(0, t);
-    env.gain.linearRampToValueAtTime(vol, t + 0.018);
-    env.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-    osc.connect(env); env.connect(master);
-    if (master._rev) env.connect(master._rev);
-    osc.start(t); osc.stop(t + dur + 0.05);
-  }
-
-  const SFX = {
-    tabSwitch()  { playTone(440,0.18,0.12,'sine'); playTone(554,0.22,0.09,'sine',0.06); },
-    save()       { playTone(523,0.15,0.12,'sine'); playTone(659,0.3,0.10,'sine',0.08); playTone(784,0.5,0.08,'sine',0.18); },
-    editOn()     { playTone(330,0.08,0.10,'sine'); playTone(440,0.15,0.10,'sine',0.04); },
-    editOff()    { playTone(440,0.08,0.10,'sine'); playTone(330,0.18,0.09,'sine',0.04); },
-    fileCreate() { playTone(523,0.35,0.09,'sine'); playTone(659,0.35,0.09,'sine',0.08); playTone(784,0.5,0.09,'sine',0.16); },
-    deleteDo()   { playTone(220,0.35,0.10,'sine'); playTone(165,0.5,0.08,'sine',0.12); },
-    complete()   { [523,659,784,1047].forEach((f,i) => playTone(f,0.55,0.10,'sine',i*0.11)); },
-    orbClick() {
-      const { ctx, master } = getAudio();
-      // Whoosh: filtered noise sweep
-      const bufLen = ctx.sampleRate * 0.6;
-      const buf = ctx.createBuffer(1, bufLen, ctx.sampleRate);
-      const data = buf.getChannelData(0);
-      for (let i = 0; i < bufLen; i++) data[i] = (Math.random() * 2 - 1);
-      const noise = ctx.createBufferSource(); noise.buffer = buf;
-      const filt = ctx.createBiquadFilter(); filt.type = 'bandpass';
-      filt.frequency.setValueAtTime(200, ctx.currentTime);
-      filt.frequency.exponentialRampToValueAtTime(3200, ctx.currentTime + 0.4);
-      filt.Q.value = 2.5;
-      const noiseGain = ctx.createGain();
-      noiseGain.gain.setValueAtTime(0, ctx.currentTime);
-      noiseGain.gain.linearRampToValueAtTime(0.55, ctx.currentTime + 0.05);
-      noiseGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.55);
-      noise.connect(filt); filt.connect(noiseGain); noiseGain.connect(master);
-      if (master._rev) noiseGain.connect(master._rev);
-      noise.start(); noise.stop(ctx.currentTime + 0.65);
-      // Rising sci-fi tone
-      playTone(220, 0.5, 0.18, 'sawtooth');
-      playTone(440, 0.45, 0.14, 'sine', 0.06);
-      playTone(880, 0.4, 0.10, 'sine', 0.14);
-      playTone(1760, 0.35, 0.07, 'sine', 0.24);
-      // Shimmer at peak
-      [1047, 1319, 1568].forEach((f, i) => playTone(f, 0.4, 0.06, 'sine', 0.3 + i * 0.06));
-    },
-    orbClose() {
-      const { ctx, master } = getAudio();
-      // Reverse whoosh: high → low noise
-      const bufLen = ctx.sampleRate * 0.45;
-      const buf = ctx.createBuffer(1, bufLen, ctx.sampleRate);
-      const data = buf.getChannelData(0);
-      for (let i = 0; i < bufLen; i++) data[i] = (Math.random() * 2 - 1);
-      const noise = ctx.createBufferSource(); noise.buffer = buf;
-      const filt = ctx.createBiquadFilter(); filt.type = 'bandpass';
-      filt.frequency.setValueAtTime(3000, ctx.currentTime);
-      filt.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.4);
-      filt.Q.value = 2;
-      const noiseGain = ctx.createGain();
-      noiseGain.gain.setValueAtTime(0.4, ctx.currentTime);
-      noiseGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.42);
-      noise.connect(filt); filt.connect(noiseGain); noiseGain.connect(master);
-      noise.start(); noise.stop(ctx.currentTime + 0.5);
-      // Falling tones
-      playTone(1760, 0.08, 0.1, 'sine');
-      playTone(880, 0.2, 0.09, 'sine', 0.07);
-      playTone(440, 0.3, 0.08, 'sine', 0.16);
-      playTone(220, 0.4, 0.07, 'sine', 0.26);
-    },
-    click()      { playTone(600,0.07,0.07,'sine'); },
-    modalOpen()  { playTone(370,0.12,0.09,'sine'); playTone(494,0.22,0.08,'sine',0.07); },
-    export()     { playTone(440,0.1,0.08,'triangle'); playTone(554,0.1,0.08,'triangle',0.08); playTone(659,0.3,0.07,'triangle',0.16); },
-    themeSwitch(){ playTone(740,0.06,0.08,'sine'); playTone(988,0.2,0.06,'sine',0.05); }
-  };
-  window.SFX = SFX;
-
-  window.openMeetingNotesPanel = function() {
-    let panel = document.getElementById('mn-panel');
-    if (panel) { panel.style.display = panel.style.display === 'none' ? 'flex' : 'none'; return; }
-    panel = document.createElement('div');
-    panel.id = 'mn-panel';
-    panel.style.cssText = 'position:fixed;right:24px;bottom:24px;width:480px;height:560px;background:var(--bg-panel);border:1px solid var(--border);border-radius:14px;box-shadow:0 40px 100px rgba(0,0,0,0.7);display:flex;flex-direction:column;z-index:600;overflow:hidden;';
-    // Title bar — draggable
-    const titleBar = document.createElement('div');
-    titleBar.style.cssText = 'display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.015);flex-shrink:0;cursor:move;user-select:none;';
-    titleBar.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      <span style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;color:var(--text);flex:1;">Meeting Notes</span>
-      <button onclick="document.getElementById('mn-panel').style.display='none'" style="background:none;border:none;color:var(--text-dim);font-size:18px;cursor:pointer;line-height:1;">✕</button>`;
-    // Drag logic
-    let dragging=false, ox=0, oy=0;
-    titleBar.onmousedown = e => { dragging=true; ox=e.clientX-panel.offsetLeft; oy=e.clientY-panel.offsetTop; panel.style.right='auto'; };
-    document.onmousemove = e => { if(!dragging) return; panel.style.left=(e.clientX-ox)+'px'; panel.style.top=(e.clientY-oy)+'px'; };
-    document.onmouseup = () => { dragging=false; };
-    panel.appendChild(titleBar);
-    // Body
-    const body = document.createElement('div');
-    body.style.cssText = 'flex:1;overflow-y:auto;padding:14px;';
-    // Add entry button
-    const addBtn = document.createElement('div');
-    addBtn.className = 'mn-add-btn';
-    addBtn.innerHTML = '<span style="font-size:16px;">+</span> New Entry';
-    body.appendChild(addBtn);
-    // Load and render notes
-    const mnData = sectionData['meeting_notes'] || { fields: {} };
-    let notes = [];
-    try { notes = JSON.parse((mnData.fields && mnData.fields['mn_entries']) || '[]'); } catch(e) {}
-    const renderPanelNotes = () => {
-      body.querySelectorAll('.mn-entry').forEach(el => el.remove());
-      notes.forEach((note, i) => {
-        const entry = document.createElement('div');
-        entry.className = 'mn-entry';
-        entry.style.marginBottom = '10px';
-        const hdr = document.createElement('div');
-        hdr.style.cssText = 'display:flex;gap:6px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.01);';
-        const dateI = document.createElement('input'); dateI.type='date'; dateI.value=note.date||''; dateI.style.cssText='background:transparent;border:none;outline:none;color:var(--text);font-family:"JetBrains Mono",monospace;font-size:10px;'; dateI.oninput=e=>{notes[i].date=e.target.value;};
-        const weekI = document.createElement('input'); weekI.type='text'; weekI.placeholder='Week #'; weekI.value=note.week||''; weekI.style.cssText='background:transparent;border:none;outline:none;color:var(--text);font-family:"JetBrains Mono",monospace;font-size:10px;width:60px;'; weekI.oninput=e=>{notes[i].week=e.target.value;};
-        const topicI = document.createElement('input'); topicI.type='text'; topicI.placeholder='Topics…'; topicI.value=note.topics||''; topicI.style.cssText='flex:1;background:transparent;border:none;outline:none;color:var(--text);font-family:"Cormorant Garamond",serif;font-size:12px;'; topicI.oninput=e=>{notes[i].topics=e.target.value;};
-        const delB = document.createElement('span'); delB.textContent='✕'; delB.style.cssText='cursor:pointer;color:rgba(212,132,122,0.4);font-size:12px;'; delB.onclick=()=>{notes.splice(i,1);renderPanelNotes();};
-        hdr.appendChild(dateI); hdr.appendChild(weekI); hdr.appendChild(topicI); hdr.appendChild(delB);
-        const notesTA = document.createElement('textarea'); notesTA.placeholder='Notes…'; notesTA.value=note.notes||''; notesTA.style.cssText='width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);outline:none;color:var(--text);font-family:"Cormorant Garamond",serif;font-size:13px;line-height:1.7;padding:8px 10px;resize:none;min-height:70px;box-sizing:border-box;'; notesTA.oninput=e=>{notes[i].notes=e.target.value;};
-        const actTA = document.createElement('textarea'); actTA.placeholder='Action items…'; actTA.value=note.actions||''; actTA.style.cssText='width:100%;background:transparent;border:none;outline:none;color:var(--text);font-family:"Cormorant Garamond",serif;font-size:13px;line-height:1.7;padding:8px 10px;resize:none;min-height:50px;box-sizing:border-box;'; actTA.oninput=e=>{notes[i].actions=e.target.value;};
-        const actLabel = document.createElement('div'); actLabel.style.cssText='font-family:"JetBrains Mono",monospace;font-size:7.5px;color:var(--gold);letter-spacing:0.8px;padding:5px 10px 0;text-transform:uppercase;'; actLabel.textContent='Action Items';
-        entry.appendChild(hdr); entry.appendChild(notesTA); entry.appendChild(actLabel); entry.appendChild(actTA);
-        body.insertBefore(entry, addBtn);
-      });
-    };
-    addBtn.onclick = () => {
-      notes.unshift({ date: new Date().toISOString().slice(0,10), week: String(notes.length+1), topics:'', notes:'', actions:'' });
-      renderPanelNotes();
-    };
-    renderPanelNotes();
-    // Footer: Save
-    const footer = document.createElement('div');
-    footer.style.cssText = 'padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:8px;flex-shrink:0;';
-    const saveBtn = document.createElement('button');
-    saveBtn.style.cssText = 'font-family:"JetBrains Mono",monospace;font-size:10px;padding:8px 16px;border-radius:7px;border:1px solid rgba(201,164,81,0.35);background:transparent;color:var(--gold);cursor:pointer;';
-    saveBtn.textContent = 'Save Notes';
-    saveBtn.onclick = () => {
-      const merged = { ...sectionData['meeting_notes'], fields: { mn_entries: JSON.stringify(notes) }, lastEditedAt: new Date().toISOString() };
-      try { localStorage.setItem('dv_sec_meeting_notes', JSON.stringify(merged)); } catch(e) {}
-      sectionData['meeting_notes'] = merged;
-      SFX.save(); showToast('✓ Meeting notes saved');
-    };
-    footer.appendChild(saveBtn);
-    panel.appendChild(body);
-    panel.appendChild(footer);
-    document.body.appendChild(panel);
-  };
-
-  window.goHome = function() { SFX.tabSwitch(); currentView = "home"; renderNav(); renderContent(); };
+  window.goHome = function() { currentView = "home"; renderNav(); renderContent(); };
 
   /* ══════════════════════════════════════════
      INIT
@@ -2117,14 +1472,6 @@
       sectionData[sec.id] = { fields: fieldsObj, completed: false };
     });
   }
-
-  document.addEventListener('keydown', e => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 's') {
-      e.preventDefault();
-      const btn = document.getElementById('btn-save');
-      if (btn) { SFX.save(); btn.click(); }
-    }
-  });
 
   function init() {
     // Restore theme immediately
