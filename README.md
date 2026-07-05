@@ -1,8 +1,22 @@
-# Relationship Architect
+## Relationship Architect
 
-A structured software-inspired relationship system designed to model communication, trust, emotional states, and long-term relational development using principles from software architecture.
+A structured relationship modeling system designed as a software-like framework for mapping emotional states, interactions, and narrative flow between two users.
 
+This project treats relational dynamics as a state-driven system rather than unstructured communication.
 ---
+## How to Use
+
+1. Open `index.html` to run the system locally
+2. Review `/docs/specification` for behavior logic
+3. Use `/docs/reference` to understand design origin and full implementation context
+
+## System Architecture
+
+- **index.html** → Core executable interface
+- **assets/screenshots/** → UI state documentation
+- **docs/specification/** → System behavior + functional design
+- **docs/reference/** → Source material (full code + original framework PDF)
+- **docs/archive/** → Legacy or deprecated materials
 
 ## System Overview
 
