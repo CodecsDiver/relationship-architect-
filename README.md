@@ -26,6 +26,23 @@ Core principles:
 - Systems thinking applied to human connection
 
 ---
+## Screenshots
+
+### Interface Overview
+
+![RAss1](assets/screenshots/RAss1.png)
+
+![RAss2](assets/screenshots/RAss2.png)
+
+![RAss3](assets/screenshots/RAss3.png)
+
+![RAss4](assets/screenshots/RAss4.png)
+
+![RAss5](assets/screenshots/RAss5.png)
+
+![RAss6](assets/screenshots/RAss6.png)
+
+![RAss7](assets/screenshots/RAss7.png)
 
 ## Repository Structure
 
